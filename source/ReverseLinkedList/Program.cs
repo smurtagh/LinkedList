@@ -15,12 +15,12 @@ namespace ReverseLinkedList
             //show original order
             Console.WriteLine(linkedHead.ToString());
 
-            ReverseList(ref linkedHead);
+            LinkedNodeHelper.ReverseList(ref linkedHead);
 
             //show reverse order
             Console.WriteLine(linkedHead.ToString());
 
-            ReverseListRecursive(ref linkedHead);
+            LinkedNodeHelper.ReverseListRecursive(ref linkedHead);
 
             //back to normal
             Console.WriteLine(linkedHead.ToString());
@@ -46,84 +46,18 @@ namespace ReverseLinkedList
             //show original order
             Console.WriteLine(doubleLinkedHead.ToString());
 
-            ReverseDoubleList(ref doubleLinkedHead);
+            DoubleLinkedNodeHelper.ReverseDoubleList(ref doubleLinkedHead);
 
             //show reverse order
             Console.WriteLine(doubleLinkedHead.ToString());
 
-            ReverseDoubleListRecursive(ref doubleLinkedHead);
+            DoubleLinkedNodeHelper.ReverseDoubleListRecursive(ref doubleLinkedHead);
 
             //back to normal
             Console.WriteLine(doubleLinkedHead.ToString());
 
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
-        }
-
-        private static void ReverseDoubleList(ref DoubleLinkedNode head)
-        {
-            DoubleLinkedNode current = head, result = null;
-            while (current != null)
-            {
-                DoubleLinkedNode nextIteration = current.Next;
-                current.Previous = current.Next;
-                current.Next = result;                
-                result = current;
-                current = nextIteration;
-            }
-            head = result;
-        }
-
-        private static void ReverseDoubleListRecursive(ref DoubleLinkedNode doubleHead)
-        {
-            DoubleLinkedNode result = null;
-            ReverseDoubleListRecursive(ref result, doubleHead);
-            doubleHead = result;
-        }
-
-        private static void ReverseDoubleListRecursive(ref DoubleLinkedNode head, DoubleLinkedNode current)
-        {
-            if (current == null)
-                return;
-
-            DoubleLinkedNode nextIteration = current.Next;
-            current.Previous = current.Next;
-            current.Next = head;
-            head = current;
-
-            ReverseDoubleListRecursive(ref head, nextIteration);
-        }
-
-        private static void ReverseList(ref LinkedNode head)
-        {
-            LinkedNode current = head, result = null;
-            while (current != null)
-            {
-                LinkedNode nextIteration = current.Next;
-                current.Next = result;
-                result = current;
-                current = nextIteration;
-            }
-            head = result;
-        }
-
-        private static void ReverseListRecursive(ref LinkedNode head)
-        {
-            LinkedNode result = null;
-            ReverseListRecursive(ref result, head);
-            head = result;
-        }
-
-        private static void ReverseListRecursive(ref LinkedNode head, LinkedNode current)
-        {
-            if (current == null)
-                return;
-
-            LinkedNode nextIteration = current.Next;
-            current.Next = head;
-            head = current;
-
-            ReverseListRecursive(ref head, nextIteration);
-        }
+        }        
     }
 }
