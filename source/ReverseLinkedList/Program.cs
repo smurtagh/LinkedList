@@ -6,8 +6,18 @@ namespace ReverseLinkedList
     {
         static void Main(string[] args)
         {
+            LinkedListReverse();
+            
+            Console.WriteLine();
 
-            //================== Single Linked List ============================
+            DoubleLinkedListReverse();
+
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+        }        
+
+        private static void LinkedListReverse()
+        {
             Console.WriteLine("Single Link");
 
             var linkedHead = new LinkedNode() { Value = "1", Next = new LinkedNode { Value = "2", Next = new LinkedNode() { Value = "3", Next = new LinkedNode() { Value = "4", Next = new LinkedNode() { Value = "5" } } } } };
@@ -15,19 +25,23 @@ namespace ReverseLinkedList
             //show original order
             Console.WriteLine(linkedHead.ToString());
 
-            LinkedNodeHelper.ReverseList(ref linkedHead);
+            //reverse it
+            LinkedNodeHelper.ReverseLinkedList(ref linkedHead);
 
             //show reverse order
             Console.WriteLine(linkedHead.ToString());
 
-            LinkedNodeHelper.ReverseListRecursive(ref linkedHead);
+            //reverse it again
+            LinkedNodeHelper.ReverseLinkedListRecursive(ref linkedHead);
 
-            //back to normal
+            //show original order again
             Console.WriteLine(linkedHead.ToString());
+        }
 
-            //================== Double Linked List ============================
+        private static void DoubleLinkedListReverse()
+        {
             Console.WriteLine("Dobule Link");
-            
+
             var doubleLinkedHead = new DoubleLinkedNode() { Value = "1" };
             var doubleLinkedSecond = new DoubleLinkedNode() { Value = "2" };
             var doubleLinkedThird = new DoubleLinkedNode() { Value = "3" };
@@ -46,18 +60,17 @@ namespace ReverseLinkedList
             //show original order
             Console.WriteLine(doubleLinkedHead.ToString());
 
-            DoubleLinkedNodeHelper.ReverseDoubleList(ref doubleLinkedHead);
+            //reverse it
+            DoubleLinkedNodeHelper.ReverseDoubleLinkedList(ref doubleLinkedHead);
 
             //show reverse order
             Console.WriteLine(doubleLinkedHead.ToString());
 
-            DoubleLinkedNodeHelper.ReverseDoubleListRecursive(ref doubleLinkedHead);
+            //reverse it again
+            DoubleLinkedNodeHelper.ReverseDoubleLinkedListRecursive(ref doubleLinkedHead);
 
-            //back to normal
+            //show original order again
             Console.WriteLine(doubleLinkedHead.ToString());
-
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
-        }        
+        }
     }
 }

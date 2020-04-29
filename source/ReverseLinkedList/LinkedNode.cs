@@ -11,13 +11,13 @@ namespace ReverseLinkedList
 
         public override string ToString()
         {
-            return $"{Value} - {Next?.ToString()}".Trim().Trim('-');
+            return $"V:{Value} N:{Next?.Value ?? "null"} - {Next?.ToString()}".Trim().Trim('-');
         }
     }
 
     internal static class LinkedNodeHelper
     {
-        public static void ReverseList(ref LinkedNode head)
+        public static void ReverseLinkedList(ref LinkedNode head)
         {
             LinkedNode current = head, result = null;
             while (current != null)
@@ -30,14 +30,14 @@ namespace ReverseLinkedList
             head = result;
         }
 
-        public static void ReverseListRecursive(ref LinkedNode head)
+        public static void ReverseLinkedListRecursive(ref LinkedNode head)
         {
             LinkedNode result = null;
-            ReverseListRecursive(ref result, head);
+            ReverseLinkedListRecursive(ref result, head);
             head = result;
         }
 
-        private static void ReverseListRecursive(ref LinkedNode head, LinkedNode current)
+        private static void ReverseLinkedListRecursive(ref LinkedNode head, LinkedNode current)
         {
             if (current == null)
                 return;
@@ -46,7 +46,7 @@ namespace ReverseLinkedList
             current.Next = head;
             head = current;
 
-            ReverseListRecursive(ref head, nextIteration);
+            ReverseLinkedListRecursive(ref head, nextIteration);
         }
     }
 }
