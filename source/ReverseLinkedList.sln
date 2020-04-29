@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseLinkedList", "ReverseLinkedList\ReverseLinkedList.csproj", "{66716400-E247-4C7A-B943-07B387D8AE3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66716400-E247-4C7A-B943-07B387D8AE3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66716400-E247-4C7A-B943-07B387D8AE3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66716400-E247-4C7A-B943-07B387D8AE3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66716400-E247-4C7A-B943-07B387D8AE3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC5B96D1-9258-4A96-B9A4-73CD977B122D}
+	EndGlobalSection
+EndGlobal
