@@ -20,14 +20,14 @@ namespace ReverseLinkedList
     {
         public static void ReverseDoubleLinkedList(ref DoubleLinkedNode head)
         {
-            DoubleLinkedNode current = head, result = null;
-            while (current != null)
+            DoubleLinkedNode result = null;
+            while (head != null)
             {
-                DoubleLinkedNode nextIteration = current.Next;
-                current.Previous = current.Next;
-                current.Next = result;
-                result = current;
-                current = nextIteration;
+                DoubleLinkedNode nextIteration = head.Next;
+                head.Previous = head.Next;
+                head.Next = result;
+                result = head;
+                head = nextIteration;
             }
             head = result;
         }

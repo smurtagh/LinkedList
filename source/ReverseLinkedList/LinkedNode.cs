@@ -19,13 +19,13 @@ namespace ReverseLinkedList
     {
         public static void ReverseLinkedList(ref LinkedNode head)
         {
-            LinkedNode current = head, result = null;
-            while (current != null)
+            LinkedNode result = null;
+            while (head != null)
             {
-                LinkedNode nextIteration = current.Next;
-                current.Next = result;
-                result = current;
-                current = nextIteration;
+                LinkedNode nextIteration = head.Next;
+                head.Next = result;
+                result = head;
+                head = nextIteration;
             }
             head = result;
         }
