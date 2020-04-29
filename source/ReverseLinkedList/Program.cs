@@ -52,11 +52,10 @@ namespace ReverseLinkedList
             //show reverse order
             Console.WriteLine(doubleHead.Print());
 
-            DoubleNode doubleResult = null;
-            ReverseDoubleListRecursive(ref doubleResult, doubleHead);
+            ReverseDoubleListRecursive(ref doubleHead);
 
             //back to normal
-            Console.WriteLine(doubleResult.Print());
+            Console.WriteLine(doubleHead.Print());
 
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
@@ -74,6 +73,13 @@ namespace ReverseLinkedList
                 current = nextIteration;
             }
             head = result;
+        }
+
+        private static void ReverseDoubleListRecursive(ref DoubleNode doubleHead)
+        {
+            DoubleNode result = null;
+            ReverseDoubleListRecursive(ref result, doubleHead);
+            doubleHead = result;
         }
 
         private static void ReverseDoubleListRecursive(ref DoubleNode head, DoubleNode current)
@@ -99,6 +105,13 @@ namespace ReverseLinkedList
                 result = current;
                 current = nextIteration;
             }
+            head = result;
+        }
+
+        private static void ReverseListRecursive(ref Node head)
+        {
+            Node result = null;
+            ReverseListRecursive(ref result, head);
             head = result;
         }
 
