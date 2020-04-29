@@ -8,10 +8,10 @@ namespace ReverseLinkedList
     {
         public Node Next { get; set; }
         public string Value { get; set; }
-        
-        public string Print()
+
+        public override string ToString()
         {
-            return $"{Value} - {Next?.Print()}".Trim().Trim('-');
+            return $"{Value} - {Next?.ToString()}".Trim().Trim('-');
         }
     }
 
@@ -21,9 +21,9 @@ namespace ReverseLinkedList
         public DoubleNode Next { get; set; }
         public string Value { get; set; }
 
-        public string Print()
+        public override string ToString()
         {
-            return $"{Previous?.Value ?? "null"} {Value} {Next?.Value ?? "null"} - {Next?.Print()}".Trim().Trim('-');
+            return $"{Previous?.Value ?? "null"} {Value} {Next?.Value ?? "null"} - {Next?.ToString()}".Trim().Trim('-');
         }
     }
 }

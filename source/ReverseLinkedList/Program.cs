@@ -13,18 +13,17 @@ namespace ReverseLinkedList
             var head = new Node() { Value = "1", Next = new Node { Value = "2", Next = new Node() { Value = "3", Next = new Node() { Value = "4", Next = new Node() { Value = "5" } } } } };
 
             //show original order
-            Console.WriteLine(head.Print());
+            Console.WriteLine(head.ToString());
 
             ReverseList(ref head);
 
             //show reverse order
-            Console.WriteLine(head.Print());
+            Console.WriteLine(head.ToString());
 
-            Node result = null;
-            ReverseListRecursive(ref result, head);
+            ReverseListRecursive(ref head);
 
             //back to normal
-            Console.WriteLine(result.Print());
+            Console.WriteLine(head.ToString());
 
             //================== Double Linked List ============================
             Console.WriteLine("Dobule Link");
@@ -45,17 +44,17 @@ namespace ReverseLinkedList
             doubleFitfth.Previous = doubleFourth;
 
             //show original order
-            Console.WriteLine(doubleHead.Print());
+            Console.WriteLine(doubleHead.ToString());
 
             ReverseDoubleList(ref doubleHead);
 
             //show reverse order
-            Console.WriteLine(doubleHead.Print());
+            Console.WriteLine(doubleHead.ToString());
 
             ReverseDoubleListRecursive(ref doubleHead);
 
             //back to normal
-            Console.WriteLine(doubleHead.Print());
+            Console.WriteLine(doubleHead.ToString());
 
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
