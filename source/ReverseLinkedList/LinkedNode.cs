@@ -19,15 +19,15 @@ namespace ReverseLinkedList
     {
         public static void ReverseLinkedList(ref LinkedNode head)
         {
-            LinkedNode result = null;
+            LinkedNode previousNode = null;
             while (head != null)
             {
-                LinkedNode nextIteration = head.Next;
-                head.Next = result;
-                result = head;
-                head = nextIteration;
+                LinkedNode nextNode = head.Next;
+                head.Next = previousNode;
+                previousNode = head;
+                head = nextNode;
             }
-            head = result;
+            head = previousNode;
         }
 
         public static void ReverseLinkedListRecursive(ref LinkedNode head)
@@ -42,11 +42,11 @@ namespace ReverseLinkedList
             if (current == null)
                 return;
 
-            LinkedNode nextIteration = current.Next;
+            LinkedNode nextNode = current.Next;
             current.Next = head;
             head = current;
 
-            ReverseLinkedListRecursive(ref head, nextIteration);
+            ReverseLinkedListRecursive(ref head, nextNode);
         }
     }
 }

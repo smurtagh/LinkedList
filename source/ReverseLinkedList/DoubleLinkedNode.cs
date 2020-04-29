@@ -20,36 +20,36 @@ namespace ReverseLinkedList
     {
         public static void ReverseDoubleLinkedList(ref DoubleLinkedNode head)
         {
-            DoubleLinkedNode result = null;
+            DoubleLinkedNode previousNode = null;
             while (head != null)
             {
-                DoubleLinkedNode nextIteration = head.Next;
+                DoubleLinkedNode nextNode = head.Next;
                 head.Previous = head.Next;
-                head.Next = result;
-                result = head;
-                head = nextIteration;
+                head.Next = previousNode;
+                previousNode = head;
+                head = nextNode;
             }
-            head = result;
+            head = previousNode;
         }
 
         public static void ReverseDoubleLinkedListRecursive(ref DoubleLinkedNode doubleHead)
         {
             DoubleLinkedNode result = null;
-            RReverseDoubleLinkedListRecursive(ref result, doubleHead);
+            ReverseDoubleLinkedListRecursive(ref result, doubleHead);
             doubleHead = result;
         }
 
-        private static void RReverseDoubleLinkedListRecursive(ref DoubleLinkedNode head, DoubleLinkedNode current)
+        private static void ReverseDoubleLinkedListRecursive(ref DoubleLinkedNode head, DoubleLinkedNode currentNode)
         {
-            if (current == null)
+            if (currentNode == null)
                 return;
 
-            DoubleLinkedNode nextIteration = current.Next;
-            current.Previous = current.Next;
-            current.Next = head;
-            head = current;
+            DoubleLinkedNode nextNode = currentNode.Next;
+            currentNode.Previous = currentNode.Next;
+            currentNode.Next = head;
+            head = currentNode;
 
-            RReverseDoubleLinkedListRecursive(ref head, nextIteration);
+            ReverseDoubleLinkedListRecursive(ref head, nextNode);
         }
     }
 }
